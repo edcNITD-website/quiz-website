@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+{% load socialaccount %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quiz-A-Preneur |{% block title %}{%  endblock  %}</title></title>
+    <link rel="stylesheet" href="{% static 'css/home.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/countdown.css'%}">
+    {%block head %}{% endblock %}
+</head>
+<body>
+
+    <!-- Header -->
+    {% include 'base/snippets/navbar.html' %}
+    <!-- Main -->
+    {% block content %}
+    {% endblock %}
+   
+
+    <!-- footer -->
+    {% include 'base/snippets/footer.html' %}
+    
+
+    <script src="{% static 'JS/home.js'%}"></script>
+    <script src="{% static 'JS/countdown.js'%}"></script>
+</body>
+</html>

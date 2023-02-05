@@ -1,0 +1,142 @@
+<!doctype html>
+{% load static %}
+{% load socialaccount %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style.min.css'%}">
+
+    <title>Sidebar #3</title>
+  </head>
+  <body>
+  
+    <!-- navbar -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </nav> -->
+
+    <!-- sidebar -->
+    <aside class="sidebar">
+      <div class="toggle">
+        <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+              <span></span>
+            </a>
+      </div>
+      <div class="side-inner">
+        <div class="container">
+          <div class="row justify-content-evenly">
+            <div class="col-sm-3 col-3">
+              <div class="block d-flex align-items-center justify-content-center">1</div>
+            </div>
+            <div class="col-sm-3 col-3">
+              <div class="block d-flex align-items-center justify-content-center attempted">2</div>
+            </div>
+            <div class="col-sm-3 col-3">
+              <div class="block d-flex align-items-center justify-content-center unattempted">3</div>
+            </div>
+            <div class="col-sm-3 col-3">
+              <div class="block d-flex align-items-center justify-content-center review">4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </aside>
+
+    <!-- quiz -->
+    <main>
+      <div class="site-section">
+        <div class="container">
+          <div class="container px-5 d-flex justify-content-center">
+            <div class="quiz my-3">
+              <div class="btnPanel d-flex justify-content-end">
+
+                <!-- burger -->
+                <!-- <div class="burger visibility" id="burger">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div> -->
+              </div>
+
+              <div class="d-flex">
+                <div class="score">+20 points</div>
+                <div class="hint d-flex justify-content-end">
+                  <img type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" src="{% static 'assets/hint.png'%}" alt="">
+                </div>
+              </div>
+
+              <div class="timer d-flex justify-content-center">
+                <div class="card ">
+                  <p>Time left</p> 
+                  <div class="time">
+                    <p id="hour">01</p>
+                    <p class="semicolon">:</p>
+                    <p id="min">00</p>
+                    <p class="semicolon">:</p>
+                    <p id="sec">00</p>
+                  </div>
+                </div>
+
+              </div>
+               
+                <div class="card">
+                    <div class="card-body text-center">
+                      This is some text within a card .
+                    </div>
+                </div>
+                <div class="input my-3">
+                    <input class="form-control me-2" type="search" placeholder="Answer" aria-label="Search">
+                    <div class="buttons d-flex my-3 mx-auto">
+                        <div class="submit mx-2">
+                            <button class="button">Submit</button>
+                        </div>
+                        <div class="review mx-2">
+                            <button class="button">Mark for review</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>  
+    </main>
+    
+
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+  </body>
+</html>

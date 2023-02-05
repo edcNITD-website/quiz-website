@@ -1,0 +1,25 @@
+{% load static %}
+{% load socialaccount %}
+<header class="header">
+    <div class="container">
+        <nav class="nav">
+        <div class="nav-logo">
+            <a href="index.html" class="nav-logo__link" title="logo">Quiz-A-Preneur | EDC</a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-menu__item">
+            <li><a href="#" class="nav-menu__link">Home</a></li>
+            <li><a href="#" class="nav-menu__link">About</a></li>
+            <li><a href="./questions.html" class="nav-menu__link">Quiz</a></li>
+
+            {% if user.is_authenticated %}
+            <li><a href="loginPage.html" class="nav-menu__link">Profile</a></li>
+            {% else %}
+            <li><a href="profile.html" class="nav-menu__link">Login</a></li>
+            {% endif %}
+            </ul>
+        </div>
+        </nav>
+        
+    </div>
+    </header>

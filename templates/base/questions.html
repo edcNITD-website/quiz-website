@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+% load static %
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+    crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/home.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/question.min.css'%}">
+
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <nav class="nav">
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo__link" title="logo">Quiz-A-Preneur | EDC</a>
+            </div>
+            <div class="nav-menu">
+                <ul class="nav-menu__item">
+                <li><a href="./home.html" class="nav-menu__link">Home</a></li>
+                <li><a href="#" class="nav-menu__link">About</a></li>
+                <li><a href="./questions.html" class="nav-menu__link">Quiz</a></li>
+                <li><a href="./loginPage.html" class="nav-menu__link">Login</a></li>
+                </ul>
+            </div>
+            </nav>
+            
+        </div>
+    </header>
+
+    <!-- modal warning -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Warning</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            warning
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go back</button>
+            <button type="button" class="btn btn-primary">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- main -->
+    <div class="d-flex main">
+        <div class="container px-5 d-flex justify-content-center">
+            <div class="quiz my-3">
+              <div class="btnPanel d-flex justify-content-end">
+                <!-- burger -->
+                <div class="burger visibility" id="burger">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+
+              <div class="d-flex">
+                <div class="score">+20 points</div>
+                <div class="hint d-flex justify-content-end">
+                  <img type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" src="{% static 'assets/hint.png'%}" alt="">
+                </div>
+              </div>
+
+              <div class="timer d-flex justify-content-center">
+                <div class="card ">
+                  <p>Time left</p> 
+                  <div class="time">
+                    <p id="hour">01</p>
+                    <p class="semicolon">:</p>
+                    <p id="min">00</p>
+                    <p class="semicolon">:</p>
+                    <p id="sec">00</p>
+                  </div>
+                </div>
+
+              </div>
+               
+                <div class="card">
+                    <div class="card-body text-center">
+                      This is some text within a card .
+                    </div>
+                </div>
+                <div class="input my-3">
+                    <input class="form-control me-2" type="search" placeholder="Answer" aria-label="Search">
+                    <div class="buttons d-flex my-3 mx-auto">
+                        <div class="submit me-3">
+                            <button class="button">Submit</button>
+                        </div>
+                        <div class="review me-3">
+                            <button class="button">Mark for review</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="panel" id="panel" > -->
+        <div class="panel" >
+
+          <div class="status">
+            <div class="d-flex">
+              <div class="block d-flex align-items-center justify-content-center">1</div>
+              <div class="block d-flex align-items-center justify-content-center attempted">2</div>
+              <div class="block d-flex align-items-center justify-content-center unattempted">3</div>
+              <div class="block d-flex align-items-center justify-content-center review">4</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- panel responsive -->
+        <div class="panel-resp" id="panel" >
+
+          <div class="status">
+            <div class="d-flex" id="block-resp">
+              <div class="block d-flex align-items-center justify-content-center">1</div>
+              <div class="block d-flex align-items-center justify-content-center attempted">2</div>
+              <div class="block d-flex align-items-center justify-content-center unattempted">3</div>
+              <div class="block d-flex align-items-center justify-content-center review">4</div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </body>
+  <!-- JavaScript Bundle with Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'JS/timer.js'%}"></script>
+  <script src="{% static 'JS/burger.js'%}"></script>
+</html>

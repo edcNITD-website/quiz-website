@@ -1,0 +1,92 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% block title %} Home {%  endblock  %}
+{% block head %} 
+
+{% endblock %}
+
+{% block content %}
+<div class="hero">
+            
+    <div class="hero-text">
+
+    <!-- Countdown -->
+    <!-- <div id="countdown">
+        <div id='tiles'></div>
+        <div class="labels">
+          <li>Days</li>
+          <li>Hours</li>
+          <li>Mins</li>
+          <li>Secs</li>
+        </div>
+      </div> -->
+    <!--  -->
+
+    <h1 class="hero-text__main">Lorem ipsum dolor sit amet consectetur.</h1>
+    <p class="hero-text__subs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ex laborum tempora eaque perspiciatis expedita maxime asperiores corrupti odio perferendis.</p>
+    <a class="hero-text__btn" href="{% provider_login_url 'google' %}">
+        
+         
+        </p>
+        
+        <p href="{% provider_login_url 'google' %}"}>
+            Login with google
+        </p>
+
+        <img src="{% static 'assets/google.png'%}" alt="">
+       
+    </a>
+</div>
+<div class="hero-image">
+    <img class="hero-image__main" src="{% static 'assets/Artboard 1.png'%}" alt="Images">
+</div>
+</div>
+<main class="main">
+
+    <section class="about">
+        <div class="container">
+        <div class="about-image">
+            <img class="about-image__main" src="https://bit.ly/2D7MxjT" alt="Images">
+        </div>
+        <div class="about-text">
+            <h1 class="about-text__main">Adipisicing elit Voluptatibus consectetur incidunt tempore.</h1>
+            <p class="about-text__subs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, distinctio ullam? Magnam non ex dolor earum quae sit, quod error, amet quasi vel, animi alias?</p>
+        </div>
+        </div>
+    </section>
+    <section class="service">
+        <div class="container">
+        <div class="card card-1">
+            <div class="card-image">
+            <img src="https://bit.ly/37hmX9N" alt="Images">
+            </div>
+            <div class="card-text">
+            <h2 class="card-text__title">Adipisicing elit</h2>
+            <p class="card-text__subs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quaerat?
+            </p>
+            </div>
+        </div>
+        <div class="card card-2">
+            <div class="card-image">
+            <img src="https://bit.ly/2Xx6MAH" alt="Images">
+            </div>
+            <div class="card-text">
+            <h2 class="card-text__title">Dolores distinctio</h2>
+            <p class="card-text__subs">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, ad!</p>
+            </div>
+        </div>
+        <div class="card card-3">
+            <div class="card-image">
+            <img src="https://bit.ly/2O0Ftf9" alt="Images">
+            </div>
+            <div class="card-text">
+            <h2 class="card-text__title">incidunt tempore</h2>
+            <p class="card-text__subs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, praesentium?
+            </p>
+            </div>
+        </div>
+        </div>
+    </section>
+    </main>
+{% endblock %}
