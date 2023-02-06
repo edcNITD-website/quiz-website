@@ -54,7 +54,7 @@ def register(request):
             return render(request, 'base/profile.html')
 
 
-@login_required
+# @login_required
 def quiz(request):
     return render(request, 'base/quiz.html')
 
