@@ -2,11 +2,23 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Student,Questions,Answer
+from .models import Student,Question,Answer
 admin.site.register(Student)
 
-admin.site.register(Questions)
+
+
+
+class AnswerAdmin(admin.StackedInline):
+    model = Answer
+
+class QuestionAdmin(admin.ModelAdmin):
+    inlines=[AnswerAdmin]
+
+
+admin.site.register(Question  , QuestionAdmin)
 admin.site.register(Answer)
+
+
 
 
 
