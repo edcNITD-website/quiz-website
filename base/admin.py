@@ -2,8 +2,9 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Student,Question,Answer
+from .models import Student,Question,Answer,EventDates
 admin.site.register(Student)
+admin.site.register(EventDates)
 
 
 
