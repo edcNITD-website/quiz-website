@@ -6,7 +6,7 @@
   font-family: "Walter Turncoat", cursive;
 }
 body {
-  background-image: url(https://assets.codepen.io/3351103/black-board.jpg);
+  background-image: url("https://assets.codepen.io/3351103/black-board.jpg");
   color: white;
 }
 h1 {
@@ -28,7 +28,7 @@ h1.member {
   /* margin-top: 40px; */
 }
 .profileIcon {
-  background-image: url("../assets/chalk_profile.png");
+  background-image: url("/static/assets/chalk_profile.png");
   background-color: transparent;
   background-size: 100% 100%;
   margin: auto;
@@ -37,12 +37,12 @@ h1.member {
 }
 form {
   width: 60%;
-  background-image: url("../assets/profile_chalk.png");
+  background-image: url("/static/assets/profile_chalk.png");
   background-color: transparent;
   background-size: 100% 100%;
 }
 form input {
-  background-image: url("../assets/chalk_profile_field.png");
+  background-image: url("/static/assets/chalk_profile_field.png");
   background-color: transparent;
   background-size: 100% 100%;
   color: white;
@@ -64,34 +64,34 @@ input[type="number"] {
   padding: 12px 20px 12px 60px;
 }
 input[name="Name"] {
-  background-image: url("../assets/chalk_profile_field_name.png");
+  background-image: url("/static/assets/chalk_profile_field_name.png");
   background-color: transparent;
   background-size: 100% 100%;
 }
 input[name="School"] {
-  background-image: url("../assets/chalk_profile_field_school.png");
+  background-image: url("/static/assets/chalk_profile_field_school.png");
   background-color: transparent;
   background-size: 100% 100%;
 }
 input[name="Class"] {
-  background-image: url("../assets/chalk_profile_field_class.png");
+  background-image: url("/static/assets/chalk_profile_field_class.png");
   background-color: transparent;
   background-size: 100% 100%;
 }
 input[name="City"] {
-  background-image: url("../assets/chalk_profile_field_city.png");
+  background-image: url("/static/assets/chalk_profile_field_city.png");
   background-color: transparent;
   background-size: 100% 100%;
 }
 input[name="Phone"] {
-  background-image: url("../assets/chalk_profile_field_phone.png");
+  background-image: url("/static/assets/chalk_profile_field_phone.png");
   background-color: transparent;
   background-size: 100% 100%;
 }
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-  background-image: url("../assets/chalk_profile_button.png");
+  background-image: url("/static/assets/chalk_profile_button.png");
   background-color: transparent;
   background-size: 100% 100%;
   color: white;
@@ -103,7 +103,7 @@ input[type="reset"] {
   transition: all 0.2s;
 }
 input[type="submit"]:hover {
-  background-image: url("../assets/chalk_profile_button_hover.png");
+  background-image: url("/static/assets/chalk_profile_button_hover.png");
 }
 select {
   width: 300px;

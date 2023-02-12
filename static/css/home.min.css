@@ -25,7 +25,7 @@ body {
 }
 .header {
   background-color: #2f4f4f;
-  background-image: url(https://assets.codepen.io/3351103/black-board.jpg);
+  background-image: url("https://assets.codepen.io/3351103/black-board.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -181,7 +181,7 @@ body {
 .main .service .card {
   padding: 2rem;
   color: #fff;
-  background-image: url("../assets/chalk-card.png");
+  background-image: url("/static/assets/chalk-card.png");
   background-color: rgba(0, 0, 0, 0);
   background-size: 100% 100%;
 }

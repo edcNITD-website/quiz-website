@@ -18,7 +18,7 @@ body {
   transition: all 0.5s;
 }
 .bg_image {
-  background-image: url("../assets/chalk-navbar.png");
+  background-image: url("/static/assets/chalk-navbar.png");
   background-color: transparent;
   background-size: 100% 100%;
 }

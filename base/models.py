@@ -36,7 +36,7 @@ class Student(models.Model):
     user = models.OneToOneField(User, null =True,on_delete=models.CASCADE)
     school = models.CharField(max_length=255,null=True)
     standard = models.PositiveIntegerField(null=True)
-    # city_of_residence = models.CharField(max_length=255,blank=False)
+    city_of_residence = models.CharField(max_length=255,blank=False,default="")
     phone_number=models.PositiveIntegerField(null=True)
     def __str__(self) -> str:
          return "Student "+self.user.first_name +" " + self.user.last_name
@@ -98,45 +98,45 @@ class Student(models.Model):
 #     free_text = models.CharField(max_length=2048, null=True, blank=True)
   
 
-class BaseModel(models.Model):
-    uid = models.UUIDField(primary_key=True,default=uuid.uuid4, editable=False, null=False)
+# class BaseModel(models.Model):
+#     uid = models.UUIDField(primary_key=True,default=uuid.uuid4, editable=False, null=False)
  
 
 
-    class Meta:
-        abstract =True
+#     class Meta:
+#         abstract =True
 
   
 
     
     
-class Category(BaseModel):
-    category_name =models.CharField(max_length=255)
-    created_at =models.DateField(auto_now_add=True)
-    updated_at= models.DateField(auto_now=True)
+# class Category(BaseModel):
+#     category_name =models.CharField(max_length=255)
+#     created_at =models.DateField(auto_now_add=True)
+#     updated_at= models.DateField(auto_now=True)
 
 
-    def __str__(self) -> str:
-        return self.category_name 
+#     def __str__(self) -> str:
+#         return self.category_name 
 
 
 
-class  Question(BaseModel):
-    category =models.ForeignKey(Category ,related_name='category',on_delete=models.CASCADE)
-    question = models.CharField(max_length=255)
-    marks =models.IntegerField(default=10)
+# class  Question(BaseModel):
+#     category =models.ForeignKey(Category ,related_name='category',on_delete=models.CASCADE)
+#     question = models.CharField(max_length=255)
+#     marks =models.IntegerField(default=10)
 
-    def __str__(self) -> str:
-        return self.question
+#     def __str__(self) -> str:
+#         return self.question
 
-class Answer(BaseModel):
-    question =models.ForeignKey(Question, related_name='question_answer',on_delete=models.CASCADE)
-    answer =models.CharField(max_length=100,default=" ")    
-    is_correct =models.BooleanField(default=False)
+# class Answer(BaseModel):
+#     question =models.ForeignKey(Question, related_name='question_answer',on_delete=models.CASCADE)
+#     answer =models.CharField(max_length=100,default=" ")    
+#     is_correct =models.BooleanField(default=False)
 
 
-    def __str__(self) -> str:
-        return self.answer
+#     def __str__(self) -> str:
+#         return self.answer
 
 
         
