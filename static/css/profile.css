@@ -1,101 +1,168 @@
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
-  font-size: 1050%;
+@import url("https://fonts.googleapis.com/css?family=Walter+Turncoat");
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: "Walter Turncoat", cursive;
 }
-
-.main-content {
-  width: 90%;
-  border-radius: 20px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
-  margin: 3em auto;
-  display: flex;
+body {
+  background-image: url(https://assets.codepen.io/3351103/black-board.jpg);
+  color: white;
 }
-.company__info {
-  background-color: #006aff;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+h1 {
   color: #fff;
+  text-align: center;
+  margin-top: 130px;
 }
-.fa-android {
-  font-size: 3em;
+h1.member {
+  margin-top: 45px;
 }
-@media screen and (max-width: 640px) {
-  .main-content {
-    width: 90%;
-  }
-  .company__info {
-    display: none;
-  }
-  .login_form {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-  }
+.container {
+  /* background-color: rgba(255, 255, 255, 0.6); */
+  width: 80%;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  /* margin-top: 40px; */
 }
-@media screen and (min-width: 642px) and (max-width: 800px) {
-  .main-content {
-    width: 70%;
-  }
-}
-.row > h2 {
-  color: #006aff;
-}
-.login_form {
-  background-color: #fff;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+.profileIcon {
+  background-image: url("../assets/chalk_profile.png");
+  background-color: transparent;
+  background-size: 100% 100%;
+  margin: auto;
+  width: 300px;
+  height: 300px;
 }
 form {
-  padding: 0 2em;
+  width: 60%;
+  background-image: url("../assets/profile_chalk.png");
+  background-color: transparent;
+  background-size: 100% 100%;
 }
-.form__input {
-  width: 100%;
-  border: 0px solid transparent;
-  border-radius: 0;
-  border-bottom: 1px solid #aaa;
-  padding: 1em 0.5em 0.5em;
-  padding-left: 2em;
-  outline: none;
-  margin: 1.5em auto;
-  transition: all 0.5s ease;
+form input {
+  background-image: url("../assets/chalk_profile_field.png");
+  background-color: transparent;
+  background-size: 100% 100%;
+  color: white;
 }
-.form__input:focus {
-  border-bottom-color: #006aff;
-  box-shadow: 0 0 5px rgba(0, 80, 80, 0.4);
-  border-radius: 4px;
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+input[type="color"],
+input[type="number"] {
+  box-sizing: border-box;
+  width: 300px;
+  height: 45px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  /* background-image: url("https://res.cloudinary.com/mamo/image/upload/c_scale,w_40/v1475961978/Contacts-Filled-50_qrzhh1.png"); */
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 60px;
 }
-.btn {
-  transition: all 0.5s ease;
-  width: 70%;
-  border-radius: 30px;
-  color: #006aff;
-  font-weight: 600;
-  background-color: #fff;
-  border: 1px solid #006aff;
-  margin-top: 1.5em;
-  margin-bottom: 1em;
+input[name="Name"] {
+  background-image: url("../assets/chalk_profile_field_name.png");
+  background-color: transparent;
+  background-size: 100% 100%;
 }
-.btn:hover,
-.btn:focus {
-  background-color: #006aff;
-  color: #fff;
+input[name="School"] {
+  background-image: url("../assets/chalk_profile_field_school.png");
+  background-color: transparent;
+  background-size: 100% 100%;
 }
-
-.row {
-  /* display: block; */
-  justify-content: center;
+input[name="Class"] {
+  background-image: url("../assets/chalk_profile_field_class.png");
+  background-color: transparent;
+  background-size: 100% 100%;
 }
-
-.form-group .d-flex {
-  width: 100%;
+input[name="City"] {
+  background-image: url("../assets/chalk_profile_field_city.png");
+  background-color: transparent;
+  background-size: 100% 100%;
 }
-.form-group .d-flex .row {
-  width: 50%;
+input[name="Phone"] {
+  background-image: url("../assets/chalk_profile_field_phone.png");
+  background-color: transparent;
+  background-size: 100% 100%;
 }
-#class {
-  margin-left: 5rem;
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  background-image: url("../assets/chalk_profile_button.png");
+  background-color: transparent;
+  background-size: 100% 100%;
+  color: white;
+  padding: 10px, 15px;
+  cursor: pointer;
+  width: 148px;
+  height: 45px;
+  margin-bottom: 20px;
+  transition: all 0.2s;
+}
+input[type="submit"]:hover {
+  background-image: url("../assets/chalk_profile_button_hover.png");
+}
+select {
+  width: 300px;
+  height: 45px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+input[type="checkbox"] {
+  margin-bottom: 25px;
+}
+/*Media Queries Section*/
+@media screen and (max-width: 800px) {
+  .profileIcon {
+    display: none;
+  }
+  .container {
+    width: 70%;
+  }
+  form {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  h1 {
+    margin-top: 30px;
+  }
+  .container {
+    width: 90%;
+    padding: 0 5%;
+  }
+}
+@media screen and (max-width: 332px) {
+  .container {
+    height: auto;
+    /* background-color: rgba(255, 255, 255, 0.4); */
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"],
+  input[type="color"],
+  select {
+    width: 275px;
+    height: auto;
+  }
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    width: 150px;
+    height: 30px;
+  }
+  input[type="checkbox"] {
+    line-height: -50px;
+  }
+  input[type="color"] {
+    height: 40px;
+  }
+  p {
+    line-height: 1px;
+  }
 }
