@@ -1,0 +1,30 @@
+.fa-heart {
+  color: red;
+}
+a {
+  color: #0069f8;
+}
+.flex {
+  display: flex;
+  margin-inline: auto;
+}
+.footer-menu__item {
+  /* margin-top: 0; */
+  display: flex;
+  /* flex-direction: column; */
+}
+.footer-menu__link {
+  margin: 0.5rem;
+}
+.footer-copy {
+  text-align: center;
+  margin-left: 3rem;
+}
+@media only screen and (max-width: 600px) {
+  .footer-contact {
+    margin-bottom: 2rem;
+  }
+  .footer-contact p {
+    text-align: left;
+  }
+}
