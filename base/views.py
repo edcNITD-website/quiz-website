@@ -47,14 +47,14 @@ def register(request):
             # student_model=  Student.objects.get(name=name)
             new_profile= Student.objects.create(user=request.user,standard=standard,phone_number=phone_number,school=school)
             
-
+        return render (request, 'base/quiz.html')
 
 
     else:
             return render(request, 'base/profile.html')
 
 
-# @login_required
+@login_required
 def quiz(request):
     return render(request, 'base/quiz.html')
 

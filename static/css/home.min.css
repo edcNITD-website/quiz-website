@@ -123,6 +123,7 @@ body {
 .header .hero-image__main {
   width: 100%;
   height: auto;
+
   /* mix-blend-mode: overlay; */
 }
 .main .about {
@@ -167,6 +168,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   padding-block: 5rem;
+
 }
 .main .service .container {
   display: grid;
