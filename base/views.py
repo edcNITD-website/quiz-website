@@ -1,22 +1,50 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
-from django.contrib.auth.models import User
-from .models import Student
-
-
-
-
+#COUNTDOWN
+# from .models import Student
+from .models import *
+from django.utils import timezone
 # Create your views here.
-
-
-
-
-
-
-
 def home(request):
-    return render(request, 'base/home.html')
+    context = {}
+    event_dates = EventDates.objects.filter(type="home").order_by('-event_start').first()
+    # print(event_dates)
+    msg = "Esummit has ended"
+    time_diff = -1
+    end = True
+    if event_dates is not None:
+        current_time = timezone.now()
+        time_diff = 0
+        end = False
+        if event_dates.event_start > current_time:
+            # hunt is yet to begin
+            time_diff = (event_dates.event_start - current_time).total_seconds()
+            msg = "QUIZ Starts in"
+        elif event_dates.event_end > current_time:
+            time_diff = (event_dates.event_end - current_time).total_seconds()
+            msg = "QUIZ Ends in"
+        else:
+            time_diff = (event_dates.event_end - current_time).total_seconds()
+            msg = "QUIZ has ended"
+            end = True
+    context['msg'] = msg
+    context['time_diff'] = int(time_diff)
+    context['has_ended'] = end
+    return render(request,'base/home.html',context)
+
+
+
+
+
+
+
+
+
+
+
+# def home(request):
+#     return render(request, 'base/home.html')
 
 @login_required
 def register(request):
