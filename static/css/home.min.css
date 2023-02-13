@@ -104,15 +104,25 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background: #006aff;
+  /* background: #006aff; */
   border: none;
   outline: none;
   border-radius: 2px;
+  background-image: url("/static/assets/chalk_google.png");
+  background-color: transparent;
+  background-size: 100% 100%;
+  transition: all 0.2s;
+}
+.header .hero-text__btn:hover {
+  background-image: url("/static/assets/chalk_google_hover.png");
+  background-color: transparent;
+  background-size: 100% 100%;
 }
 .header .hero-text__btn p {
   display: flex;
   align-items: center;
   margin: 5px;
+  width: 110px;
 }
 .header .hero-text__btn img {
   background-color: #fff;
