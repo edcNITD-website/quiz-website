@@ -72,7 +72,7 @@ body {
 .header .hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  /* grid-gap: 2rem; */
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -362,3 +362,24 @@ body {
     color: #fff;
   }
 } /*# sourceMappingURL=home.min.css.map */
+
+/*  */
+/* Timer */
+/*  */
+.container-timer {
+  padding: 0%;
+}
+#headline {
+  font-weight: normal;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+#counter ul {
+  display: flex;
+}
+#counter ul li {
+  width: 90px;
+}
+#counter ul li span {
+  font-size: 2rem;
+}
