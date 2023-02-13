@@ -50,10 +50,11 @@ def home(request):
 def register(request):
     user= request.user
     if request.method == 'POST':
-        # name = request.POST['name']
-        standard =request.POST['standard']
-        school = request.POST['school']
-        phone_number= request.POST['phone_number']
+        name= request.POST['Name']
+        standard =request.POST['Class']
+        school = request.POST['School']
+        phone_number= request.POST['Phone']
+        city=request.POST['City']
         
 
 
