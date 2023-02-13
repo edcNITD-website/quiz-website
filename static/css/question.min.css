@@ -41,7 +41,7 @@
   text-decoration: none;
 }
 .container {
-  width: 75%;
+  /* width: 75%; */
 }
 .container .quiz .btnPanel {
   width: 100%;

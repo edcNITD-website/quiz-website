@@ -72,7 +72,7 @@ body {
 .header .hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  /* grid-gap: 2rem; */
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -104,15 +104,25 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background: #006aff;
+  /* background: #006aff; */
   border: none;
   outline: none;
   border-radius: 2px;
+  background-image: url("/static/assets/chalk_google.png");
+  background-color: transparent;
+  background-size: 100% 100%;
+  transition: all 0.2s;
+}
+.header .hero-text__btn:hover {
+  background-image: url("/static/assets/chalk_google_hover.png");
+  background-color: transparent;
+  background-size: 100% 100%;
 }
 .header .hero-text__btn p {
   display: flex;
   align-items: center;
   margin: 5px;
+  width: 110px;
 }
 .header .hero-text__btn img {
   background-color: #fff;
@@ -168,7 +178,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   padding-block: 5rem;
-
 }
 .main .service .container {
   display: grid;
@@ -363,3 +372,24 @@ body {
     color: #fff;
   }
 } /*# sourceMappingURL=home.min.css.map */
+
+/*  */
+/* Timer */
+/*  */
+.container-timer {
+  padding: 0%;
+}
+#headline {
+  font-weight: normal;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+#counter ul {
+  display: flex;
+}
+#counter ul li {
+  width: 90px;
+}
+#counter ul li span {
+  font-size: 2rem;
+}
