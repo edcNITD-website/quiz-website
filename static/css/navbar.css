@@ -17,6 +17,7 @@ body {
   color: white;
   transition: all 0.5s;
 }
+
 .bg_image {
   background-image: url("/static/assets/chalk-navbar.png");
   background-color: transparent;
@@ -24,8 +25,11 @@ body {
 }
 
 .brand-title {
-  font-size: 1.5rem;
-  margin: 0.5rem;
+  /* font-size: 1.5rem; */
+  /* margin: 0.5rem; */
+}
+.brand-title img {
+  width: 130px;
 }
 
 .navbar-links {
