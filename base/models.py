@@ -38,6 +38,7 @@ class Student(models.Model):
     standard = models.PositiveIntegerField(null=True)
     city_of_residence = models.CharField(max_length=255,blank=False,default="")
     phone_number=models.PositiveIntegerField(null=True)
+    
     def __str__(self) -> str:
          return "Student "+self.user.first_name +" " + self.user.last_name
 
