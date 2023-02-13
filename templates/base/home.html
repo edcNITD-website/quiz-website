@@ -13,26 +13,13 @@
         <div class="hero">
 
             <div class="hero-text">
-
-                <!-- Countdown -->
-                <!-- <div id="countdown">
-                <div id='tiles'></div>
-                <div class="labels">
-                  <li>Days</li>
-                  <li>Hours</li>
-                  <li>Mins</li>
-                  <li>Secs</li>
-                </div>
-              </div> -->
-                <!--  -->
-
-
                 <h1 class="hero-text__main">Lorem ipsum dolor sit amet consectetur.</h1>
                 <p class="hero-text__subs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ex laborum
                     tempora eaque perspiciatis expedita maxime asperiores corrupti odio perferendis.</p>
                     {% if request.user.is_authenticated %}
                     <div class="container-timer">
                  <h1 id="headline">Quiz Begins in:</h1>
+
             <div id="counter">
               <ul>
                 <li><span id="days"></span>days</li>
@@ -58,35 +45,17 @@
                 {% endif %}
             </div>
                 <!-- Vector -->
+                <div class="hero-image">
+                    <img class="hero-image__main" src="{% static 'assets/Artboard 1_chalk.png'%}" alt="Images">
+                </div>
         </div>
-        <div class="hero-image">
-            <img class="hero-image__main" src="{% static 'assets/Artboard 1_chalk.png'%}" alt="Images">
-        </div>
-            </div>
-            <!-- <div class="hero-image">
-                <img class="hero-image__main" src="{% static 'assets/Artboard 1.png'%}" alt="Images"> -->
-
-
-        <!-- COUNTER -->
-        <!-- <div class="grid grid-cols-2 lg:grid-cols-3 list-none text-center gap-2" id="counter">
-            <li class="uppercase text-lg"><span id="days" class="text-xl lg:text-5xl font-bold"></span>Days</li>
-            <li class="uppercase text-lg"><span id="hours" class="text-xl lg:text-5xl font-bold"></span>Hours</li>
-            <li class="uppercase text-lg col-span-2 lg:col-span-1"><span id="mins"
-                    class="text-xl lg:text-5xl font-bold"></span>Minutes</li>
-            <li class="hidden " style="
-                display: none;
-                width: 0;
-                height: 0;
-              " id="time_diff">{{time_diff}}</li>
-            <li class="uppercase text-lg hidden"><span id="seconds" class="text-5xl font-bold"></span>Seconds</li>
-        </div> -->
-
-        
     </div>
 </header>
 
 
 <main class="main">
+
+    <!-- Rules -->
     <section class="about">
         <div class="container">
             <div class="about-image">
@@ -103,8 +72,8 @@
     <!-- Prizes -->
     <section class="service">
         <div class="blur"></div>
+        <h1 class="prize-title">Prizes</h1>
         <div class="container">
-
             <div class="flex-cards">
                 <div class="card card-1">
                     <div class="card-image">
