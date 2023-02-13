@@ -381,6 +381,14 @@ body {
     font-size: 1rem;
     color: #fff;
   }
+
+  .flex-cards {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .main .service .card-2 {
+    margin-block-end: 2rem;
+  }
 } /*# sourceMappingURL=home.min.css.map */
 
 /*  */
