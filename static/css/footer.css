@@ -40,16 +40,22 @@ a {
   .footer-menu__item {
     flex-direction: row;
     width: 100%;
+    margin: 0px;
+  }
+  .footer-menu__item li {
+    margin: 0;
+    margin-bottom: 3rem;
   }
   .footer-contact {
     margin-bottom: 2rem;
-    width: 20%;
-  }
-  .footer-contact h3,
-  p {
-    text-align: left;
+    width: 27%;
   }
   .footer-copy {
     width: 25%;
+    margin-left: 0rem;
+  }
+  .footer-contact p {
+    text-align: left;
+    font-size: 0.75rem;
   }
 }

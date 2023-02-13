@@ -179,6 +179,16 @@ body {
   background-position: center;
   padding-block: 5rem;
 }
+/* .blur {
+  position: relative;
+  height: 500;
+  width: max-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff10;
+  backdrop-filter: blur(15px);
+} */
 .main .service .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -370,6 +380,14 @@ body {
     font-family: inherit;
     font-size: 1rem;
     color: #fff;
+  }
+
+  .flex-cards {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .main .service .card-2 {
+    margin-block-end: 2rem;
   }
 } /*# sourceMappingURL=home.min.css.map */
 
