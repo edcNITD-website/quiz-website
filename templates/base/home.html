@@ -26,28 +26,29 @@
               </div> -->
                 <!--  -->
 
+
                 <h1 class="hero-text__main">Lorem ipsum dolor sit amet consectetur.</h1>
                 <p class="hero-text__subs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ex laborum
                     tempora eaque perspiciatis expedita maxime asperiores corrupti odio perferendis.</p>
                     {% if request.user.is_authenticated %}
-                    <div class="grid grid-cols-2 lg:grid-cols-3 list-none text-center gap-2" id="counter">
-                        <li class="uppercase text-lg"><span id="days" class="text-xl lg:text-5xl font-bold"></span>Days</li>
-                        <li class="uppercase text-lg"><span id="hours" class="text-xl lg:text-5xl font-bold"></span>Hours</li>
-                        <li class="uppercase text-lg col-span-2 lg:col-span-1"><span id="mins"
-                                class="text-xl lg:text-5xl font-bold"></span>Minutes</li>
-                        <li class="hidden " style="
-                            display: none;
-                            width: 0;
-                            height: 0;
-                          " id="time_diff">{{time_diff}}</li>
-                        <li class="uppercase text-lg hidden"><span id="seconds" class="text-5xl font-bold"></span>Seconds</li>
-                    </div>
-                    <!-- <a class="hero-text__btn" href="/quiz">
-                        <p>
-                          Go to Profile
-                        </p>
-                        <img src="{% static 'assets/google.png'%}" alt="">
-                    </a>     -->
+                    <div class="container-timer">
+            <h1 id="headline">Quiz Begins in:</h1>
+            <div id="counter">
+              <ul>
+                <li><span id="days"></span>days</li>
+                <li><span id="hours"></span>Hrs</li>
+                <li><span id="mins"></span>Mins</li>
+                <li class="hidden " style="
+                display: none;
+                width: 0;
+                height: 0;
+              " id="time_diff">{{time_diff}}</li>
+                <li><span id="seconds"></span>Sec</li>
+              </ul>
+
+            </div>
+        </div>
+                
                     {% else %}
                 <a class="hero-text__btn" href="{% provider_login_url 'google' %}">
                     <p>
@@ -59,11 +60,16 @@
             </div>
             <div class="hero-image">
                 <img class="hero-image__main" src="{% static 'assets/Artboard 1.png'%}" alt="Images">
-            </div>
+
+          
+        <!-- Vector -->
+        </div>
+        <div class="hero-image">
+            <img class="hero-image__main" src="{% static 'assets/Artboard 1_chalk.png'%}" alt="Images">
         </div>
 
         <!-- COUNTER -->
-        <div class="grid grid-cols-2 lg:grid-cols-3 list-none text-center gap-2" id="counter">
+        <!-- <div class="grid grid-cols-2 lg:grid-cols-3 list-none text-center gap-2" id="counter">
             <li class="uppercase text-lg"><span id="days" class="text-xl lg:text-5xl font-bold"></span>Days</li>
             <li class="uppercase text-lg"><span id="hours" class="text-xl lg:text-5xl font-bold"></span>Hours</li>
             <li class="uppercase text-lg col-span-2 lg:col-span-1"><span id="mins"
@@ -74,8 +80,9 @@
                 height: 0;
               " id="time_diff">{{time_diff}}</li>
             <li class="uppercase text-lg hidden"><span id="seconds" class="text-5xl font-bold"></span>Seconds</li>
-        </div>
+        </div> -->
 
+        
     </div>
 </header>
 
@@ -84,7 +91,7 @@
     <section class="about">
         <div class="container">
             <div class="about-image">
-                <img class="about-image__main" src="https://bit.ly/2D7MxjT" alt="Images">
+                <img class="about-image__main" src="{% static 'assets/Artboard 2_chalk.png'%}" alt="Images">
             </div>
             <div class="about-text">
                 <h1 class="about-text__main">Adipisicing elit Voluptatibus consectetur incidunt tempore.</h1>
@@ -97,7 +104,7 @@
         <div class="container">
             <div class="card card-1">
                 <div class="card-image">
-                    <img src="https://bit.ly/37hmX9N" alt="Images">
+                    <img src="{% static 'assets/2nd.png'%}" alt="Images">
                 </div>
                 <div class="card-text">
                     <h2 class="card-text__title">Adipisicing elit</h2>
@@ -107,7 +114,7 @@
             </div>
             <div class="card card-2">
                 <div class="card-image">
-                    <img src="https://bit.ly/2Xx6MAH" alt="Images">
+                    <img src="{% static 'assets/1st.png'%}" alt="Images">
                 </div>
                 <div class="card-text">
                     <h2 class="card-text__title">Dolores distinctio</h2>
@@ -116,7 +123,7 @@
             </div>
             <div class="card card-3">
                 <div class="card-image">
-                    <img src="https://bit.ly/2O0Ftf9" alt="Images">
+                    <img src="{% static 'assets/3rd.png'%}" alt="Images">
                 </div>
                 <div class="card-text">
                     <h2 class="card-text__title">incidunt tempore</h2>
