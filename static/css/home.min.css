@@ -22,6 +22,7 @@ body {
   margin: 0 auto;
   max-width: 68rem;
   width: 100%;
+  /* margin-top: 2rem; */
 }
 .header {
   background-color: #2f4f4f;
@@ -378,6 +379,7 @@ body {
     /* margin-block: 5rem; */
   }
   .header .hero-image__main {
+    margin-top: 2rem;
     margin-bottom: 0rem;
   }
   .container-timer {
