@@ -4,5 +4,6 @@ const navbar = document.getElementById("navbar");
 
 toggleButton.addEventListener("click", () => {
   navbarLinks.classList.toggle("active");
+  navbar.classList.toggle("nav-open-bg");
   navbar.classList.toggle("bg_image");
 });

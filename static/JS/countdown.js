@@ -1,40 +1,37 @@
 // COUNTDOWN
 function secondsToDhms(seconds) {
   if (seconds < 0) {
-      document.getElementById("counter").style.display = "None";
+    document.getElementById("counter").style.display = "None";
   }
   seconds = Number(seconds);
-  var d = Math.floor(seconds / (3600*24));
-  var h = Math.floor(seconds % (3600*24) / 3600);
-  var m = Math.floor(seconds % 3600 / 60);
+  var d = Math.floor(seconds / (3600 * 24));
+  var h = Math.floor((seconds % (3600 * 24)) / 3600);
+  var m = Math.floor((seconds % 3600) / 60);
   var s = Math.floor(seconds % 60);
   if (d == 0) {
-      document.getElementById("days").parentElement.classList.add("hidden");
-      document.getElementById("seconds").parentElement.classList.remove("hidden");
+    document.getElementById("days").parentElement.classList.add("hidden");
+    document.getElementById("seconds").parentElement.classList.remove("hidden");
   }
-  document.getElementById("days").innerText = d ;
-  document.getElementById("hours").innerText = h ;
-  document.getElementById("mins").innerText = m ;
-  document.getElementById("seconds").innerText = s ;
-
+  document.getElementById("days").innerText = d;
+  document.getElementById("hours").innerText = h;
+  document.getElementById("mins").innerText = m;
+  document.getElementById("seconds").innerText = s;
 }
 
 function startTimer() {
-  setInterval(countdown,1000)
+  setInterval(countdown, 1000);
 }
 
 function countdown() {
-  let seconds = document.getElementById('time_diff').innerHTML;
-  document.getElementById('time_diff').innerHTML = seconds - 1;
+  let seconds = document.getElementById("time_diff").innerHTML;
+  document.getElementById("time_diff").innerHTML = seconds - 1;
   // let seconds = 100;
   // console.log(document.getElementById('time_diff').innerHTML);
-  console.log(seconds)
-  secondsToDhms(seconds)
+  // console.log(seconds);
+  secondsToDhms(seconds);
 }
 
-document.addEventListener('DOMContentLoaded', startTimer());
-
-
+document.addEventListener("DOMContentLoaded", startTimer());
 
 //OLD
 var target_date = new Date().getTime() + 1000 * 3600 * 48; // set the countdown date
@@ -78,8 +75,3 @@ function getCountdown() {
 function pad(n) {
   return (n < 10 ? "0" : "") + n;
 }
-
-
-
-
-
