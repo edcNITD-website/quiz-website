@@ -10,6 +10,7 @@ urlpatterns=[
     path('',views.home),
     path('register', views.register),
     path('quiz',views.quiz),
+    path('export',views.export)
     
     
 

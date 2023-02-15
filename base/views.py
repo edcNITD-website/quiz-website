@@ -1,7 +1,9 @@
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+import csv
 
 #COUNTDOWN
 # from .models import Student
@@ -88,5 +90,23 @@ def register(request):
 @login_required
 def quiz(request):
     return render(request, 'base/quiz.html')
+
+
+def export(request):
+    if request.user.username == 'admin':
+
+     students = Student.objects.all()
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename= quizregistration.csv'
+    writer = csv.writer(response)
+    writer.writerow(['User','Standard','School','Phone Number','City of Residence'])
+    field =['User','Standard','School','Phone Number','City of Residence']
+    student_fields= students.values_list('user','standard','school','phone_number','city_of_residence')
+    for student in student_fields:
+        writer.writerow(student)
+    return response
+
+
+
 
 
