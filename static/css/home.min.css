@@ -22,6 +22,7 @@ body {
   margin: 0 auto;
   max-width: 68rem;
   width: 100%;
+  /* margin-top: 2rem; */
 }
 .header {
   background-color: #2f4f4f;
@@ -92,6 +93,8 @@ body {
   text-transform: capitalize;
   color: #fff;
   margin: 1rem 0 3rem 0;
+  /* text-justify: auto; */
+  text-align: justify;
 }
 .header .hero-text__btn {
   padding-left: 0.5rem;
@@ -136,6 +139,14 @@ body {
 
   /* mix-blend-mode: overlay; */
 }
+.commingSoon {
+  font-size: 2rem;
+}
+.commingSoon-center {
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+}
 .main .about {
   background: #fafafa;
   background-image: url("https://assets.codepen.io/3351103/black-board.jpg");
@@ -147,14 +158,25 @@ body {
 .main .about .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 0rem;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 0rem;
+}
+.main .about-image {
+  width: 90%;
 }
 .main .about-image__main {
-  width: 80%;
+  width: 100%;
   height: auto;
+}
+.main .about-text {
+  width: 100%;
+  color: white;
+  text-align: justify;
+}
+.main .about-text div {
+  color: #006aff;
 }
 .main .about-text__main {
   font-family: inherit;
@@ -353,10 +375,19 @@ body {
   .header .hero {
     grid-template-columns: 1fr;
     justify-content: center;
+    height: fit-content;
     /* margin-block: 5rem; */
   }
+  .header .hero-image__main {
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+  }
+  .container-timer {
+    margin-bottom: 3rem;
+  }
   .main .about {
-    padding-block: 0;
+    padding-inline: 1rem;
+    padding-block: 3rem;
   }
   .header .hero-text {
     order: 2;
@@ -367,6 +398,7 @@ body {
     justify-content: center;
   }
   .main .about-image img {
+    margin-bottom: 2rem;
     width: 100%;
     height: auto;
   }
@@ -425,6 +457,7 @@ body {
   padding: 0%;
 }
 #headline {
+  font-size: 2rem;
   font-weight: normal;
   letter-spacing: 0.125rem;
   text-transform: uppercase;

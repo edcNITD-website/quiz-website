@@ -13,36 +13,39 @@
         <div class="hero">
 
             <div class="hero-text">
-                <h1 class="hero-text__main">Lorem ipsum dolor sit amet consectetur.</h1>
-                <p class="hero-text__subs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ex laborum
-                    tempora eaque perspiciatis expedita maxime asperiores corrupti odio perferendis.</p>
+                <h1 class="hero-text__main">Quiz-A-Preneur</h1>
+
+                <p class="hero-text__subs">
+                    <br> This competition would not only test your knowledge and promptness but would surely instill the feeling of being an entrepreneur-dodging and answering complicated questions for a living.
+                    <br>Don't miss out on this opportunity, register today!
+                </p>
                     {% if request.user.is_authenticated %}
                     <div class="container-timer">
-                 <h1 id="headline">Quiz Begins in:</h1>
+                        <h1 id="headline">Quiz Begins in:</h1>
 
-            <div id="counter">
-              <ul>
-                <li><span id="days"></span>days</li>
-                <li><span id="hours"></span>Hrs</li>
-                <li><span id="mins"></span>Mins</li>
-                <li class="hidden " style="
-                display: none;
-                width: 0;
-                height: 0;
-              " id="time_diff">{{time_diff}}</li>
-                <li><span id="seconds"></span>Sec</li>
-              </ul>
-
-            </div>
-        </div>
-                
+                        <div id="counter">
+                            <ul>
+                                <li><span id="days"></span>days</li>
+                                <li><span id="hours"></span>Hrs</li>
+                                <li><span id="mins"></span>Mins</li>
+                                <li class="hidden " style="
+                                display: none;
+                                width: 0;
+                                height: 0;
+                            " id="time_diff">{{time_diff}}</li>
+                                <li><span id="seconds"></span>Sec</li>
+                            </ul>
+                        </div>
+                    </div> 
                     {% else %}
-                <a class="hero-text__btn" href="{% provider_login_url 'google' %}">
-                    <p>
-                        Register
-                    </p>
-                </a>
-                {% endif %}
+                    <a class="hero-text__btn" href="{% provider_login_url 'google' %}">
+                        <p>
+                            Register
+                        </p>
+                    </a>
+                    {% endif %}
+
+
             </div>
                 <!-- Vector -->
                 <div class="hero-image">
@@ -63,7 +66,28 @@
             </div>
             <div class="about-text">
                 <h1 class="about-text__main">RULES</h1>
-                <p class="about-text__subs"></p>
+                <p class="about-text__subs">
+                    <div>Time limit:</div>  
+                    The quiz will have a set time limit, and participants must complete all questions within that time. Timer will start as soon as the participant begins the quiz.
+                    <br><br>
+                    <div>Question format:</div>
+                    The questions will be multiple choice and/or images/text based.
+                    <br><br>
+                    <div>Scoring:</div>
+                    Points will be awarded for each correct answer. The total number of points possible will be indicated on the website.
+                    <br><br>
+                    <div>Cheating:</div>
+                    Any attempt to cheat or manipulate the quiz results will result in immediate disqualification. This includes using external sources such as search engines or accessing the quiz website through multiple devices.
+                    <br><br>
+                    <div>Technical issues:</div>
+                    In the event of technical difficulties, participants must inform the quiz administrator as soon as possible. The administrator will determine if the participant will be allowed to continue the quiz or if a restart is necessary.
+                    <br><br>
+                    <div>Prize:</div>
+                    A prize will be awarded to the participant with the highest score at the end of the quiz. The prize will be clearly stated on the website.
+                    <br><br>
+                    <div>Changes: </div>
+                    The quiz administrator reserves the right to change these rules at any time without prior notice.
+                </p>
             </div>
         </div>
     </section>
@@ -73,7 +97,9 @@
     <section class="service">
         <div class="blur"></div>
         <h1 class="prize-title">Prizes</h1>
-        <div class="container">
+        <div class="commingSoon-center">Comming Soon!</div>
+
+        <!-- <div class="container">
             <div class="flex-cards">
                 <div class="card card-1">
                     <div class="card-image">
@@ -110,7 +136,9 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+
     </section>
 </main>
 
