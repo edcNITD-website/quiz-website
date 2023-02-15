@@ -19,7 +19,7 @@ body {
   align-items: center;
   /* background-color: #333; */
   color: white;
-  /* transition: all 0.5s; */
+  /* transition: all 0.5s;   */
 }
 
 .bg_image {
@@ -32,7 +32,7 @@ body {
   /* font-size: 1.5rem; */
   /* margin: 0.5rem; */
 }
-.brand-title img {
+.brand-title a img {
   width: 130px;
 }
 
