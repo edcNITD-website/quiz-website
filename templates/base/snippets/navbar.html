@@ -42,7 +42,13 @@
           <li><a href="#Home">Home</a></li>
           <li><a href="#Rules">Rules</a></li>
           <li><a href="https://www.edcnitd.co.in/" blank="True" target="_blank">EDC</a></li>
-          <li><a href="#hero1">Contact</a></li>
+          {% if request.user.is_authenticated %}
+          <li><a href="/register">Profile</a></li>
+          {% else %}
+          <li><a href="/">Register</a></li>
+          {% endif %}
+
+
 
         </ul>
       </div>

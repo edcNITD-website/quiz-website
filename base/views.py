@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 import csv
@@ -55,7 +55,7 @@ def register(request):
     user= request.user
     if request.method == 'POST':
         name= request.POST['Name']
-        standard =request.POST['standard']
+        standard =request.POST['Class']
         school = request.POST['School']
         phone_number= request.POST['Phone']
         city=request.POST['City']
@@ -80,7 +80,7 @@ def register(request):
             # student_model=  Student.objects.get(name=name)
             new_profile= Student.objects.create(user=request.user,standard=standard,phone_number=phone_number,school=school)
             
-        return render (request, 'base/home.html')
+        return redirect('/')
 
 
     else:
@@ -94,17 +94,16 @@ def quiz(request):
 
 def export(request):
     if request.user.username == 'admin':
-
-     students = Student.objects.all()
-    response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename= quizregistration.csv'
-    writer = csv.writer(response)
-    writer.writerow(['User','Standard','School','Phone Number','City of Residence'])
-    field =['User','Standard','School','Phone Number','City of Residence']
-    student_fields= students.values_list('user','standard','school','phone_number','city_of_residence')
-    for student in student_fields:
-        writer.writerow(student)
-    return response
+        students = Student.objects.all()
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename= quizregistration.csv'
+        writer = csv.writer(response)
+        writer.writerow(['User','Standard','School','Phone Number','City of Residence'])
+        field =['User','Standard','School','Phone Number','City of Residence']
+        student_fields= students.values_list('user','standard','school','phone_number','city_of_residence')
+        for student in student_fields:
+            writer.writerow(student)
+        return response
 
 
 
