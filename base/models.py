@@ -34,13 +34,13 @@ class EventDates(models.Model):
 
 class Student(models.Model):
     user = models.OneToOneField(User, null =True,on_delete=models.CASCADE)
+    name =models.CharField(max_length=255,null=True)
     school = models.CharField(max_length=255,null=True)
     standard = models.PositiveIntegerField(null=True)
-    city_of_residence = models.CharField(max_length=255,blank=False,default="")
     phone_number=models.PositiveIntegerField(null=True)
     
     def __str__(self) -> str:
-        return self.user
+        return str(self.name)
 
 
 

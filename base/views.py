@@ -67,7 +67,7 @@ def register(request):
             
             student = Student.objects.filter(user=request.user).first()
             student.user = user
-                                                                                                                        
+            student.name= name
             student.standard = standard
             student.school = school
             student.phone_number=phone_number
