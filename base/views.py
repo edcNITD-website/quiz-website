@@ -71,6 +71,7 @@ def register(request):
             student.standard = standard
             student.school = school
             student.phone_number=phone_number
+            student.city_of_residence=city
             
             student.save()
         else:    
