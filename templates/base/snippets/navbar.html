@@ -39,17 +39,15 @@
       </button>
       <div class="navbar-links">
         <ul>
-          <li><a href="#Home">Home</a></li>
-          <li><a href="#Rules">Rules</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#Rules">Rules</a></li>
           <li><a href="https://www.edcnitd.co.in/" blank="True" target="_blank">EDC</a></li>
           {% if request.user.is_authenticated %}
           <li><a href="/register">Profile</a></li>
+          <li><a href="/accounts/logout">Logout</a></li>
           {% else %}
           <li><a href="{% provider_login_url 'google' %}">Register</a></li>
           {% endif %}
-
-
-
         </ul>
       </div>
     </nav>

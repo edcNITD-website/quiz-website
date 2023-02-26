@@ -4,16 +4,13 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 import csv
-
-#COUNTDOWN
-# from .models import Student
 from .models import *
 from django.utils import timezone
+
 # Create your views here.
 def home(request):
     context = {}
     event_dates = EventDates.objects.filter(type="home").order_by('-event_start').first()
-    # print(event_dates)
     msg = "Esummit has ended"
     time_diff = -1
     end = True
@@ -22,7 +19,6 @@ def home(request):
         time_diff = 0
         end = False
         if event_dates.event_start > current_time:
-            # hunt is yet to begin
             time_diff = (event_dates.event_start - current_time).total_seconds()
             msg = "QUIZ Starts in"
         elif event_dates.event_end > current_time:
@@ -37,19 +33,6 @@ def home(request):
     context['has_ended'] = end
     return render(request,'base/home.html',context)
 
-
-
-
-
-
-
-
-
-
-
-# def home(request):
-#     return render(request, 'base/home.html')
-
 @login_required
 def register(request):
     user= request.user
@@ -59,39 +42,26 @@ def register(request):
         school = request.POST['School']
         phone_number= request.POST['Phone']
         city=request.POST['City']
-        
-
-
-
         if Student.objects.filter(user=request.user).first() is not None:
-            
             student = Student.objects.filter(user=request.user).first()
             student.user = user
-            student.name= name
+            student.name = name
             student.standard = standard
             student.school = school
-            student.phone_number=phone_number
-            student.city_of_residence=city
-            
+            student.phone_number = phone_number
+            student.city_of_residence = city
             student.save()
-        else:    
-            student = Student.objects.create( standard=standard,phone_number=phone_number,school= school)
-            student.save()
-
-            # student_model=  Student.objects.get(name=name)
-            new_profile= Student.objects.create(user=request.user,standard=standard,phone_number=phone_number,school=school)
-            
+        else:
+            new_profile = Student.objects.create(user=request.user, standard=standard, phone_number=phone_number, school=school, name=name, city_of_residence=city)
+            new_profile.save()
         return redirect('/')
-
-
     else:
-            return render(request, 'base/profile.html')
-
+        student_details = Student.objects.filter(user=request.user).first()
+        return render(request, 'base/profile.html', { 'student_details': student_details })
 
 @login_required
 def quiz(request):
     return render(request, 'base/quiz.html')
-
 
 def export(request):
     if request.user.username == 'admin':
@@ -105,8 +75,3 @@ def export(request):
         for student in student_fields:
             writer.writerow(student)
         return response
-
-
-
-
-
