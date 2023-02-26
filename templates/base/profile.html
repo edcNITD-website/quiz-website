@@ -1,15 +1,14 @@
-
 {% extends 'base/base.html' %}
 {% load static %}
 {% load socialaccount %}
-{% block title %} Login {%  endblock  %}
+{% block title %}Profile{%  endblock  %}
 {% block head %} 
 <!-- icons -->
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 />
-	<link rel="stylesheet" href="{% static 'css/profile.css'%}">
+<link rel="stylesheet" href="{% static 'css/profile.css'%}">
 {% endblock %} 
 
 {% block content %}
@@ -19,15 +18,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 		</div>
 		<form autocomplete="off" method="POST">
 			{% csrf_token %}
-			<input type="text" name="Name" placeholder="Name" required=""><br>
-			<input type="text" name="School" placeholder="School" required=""><br>
-			<input type="text" name="Class" placeholder="Class" required=""><br>
-			<input type="text" name="City" placeholder="City" required=""><br>
-			<input type="number" name="Phone" placeholder="Phone Number" required=""><br>
+			<input type="text" name="Name" placeholder="Name" required="" value="{{student_details.name}}"><br>
+			<input type="text" name="School" placeholder="School" required="" value="{{student_details.school}}"><br>
+			<input type="text" name="Class" placeholder="Class" required="" value="{{student_details.standard}}"><br>
+			<input type="text" name="City" placeholder="City" required="" value="{{student_details.city_of_residence}}"><br>
+			<input type="number" name="Phone" placeholder="Phone Number" required="" value="{{student_details.phone_number}}"><br>
 			<input type="submit" name="submit" value="Submit">
 		</form>
 	</div>
 </body>
-
 {% endblock %}
-

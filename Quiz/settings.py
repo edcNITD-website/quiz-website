@@ -164,8 +164,7 @@ SOCIALACCOUNT_PROVIDERS = {
 SOCIALACCOUNT_LOGIN_ON_GET = True
 SOCIALACCOUNT_EMAIL_REQUIRED=True
 LOGIN_URL= "/accounts/google/login"
-
-
+ACCOUNT_LOGOUT_ON_GET = True
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.auth",
