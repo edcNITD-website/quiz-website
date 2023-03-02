@@ -7,13 +7,10 @@ import uuid
 class EventDates(models.Model):
     event_start = models.DateTimeField()
     event_end = models.DateTimeField()
-    type = models.CharField(max_length=100,default="home");
+    type = models.CharField(max_length=100,default="home")
     name = models.CharField(default="",max_length=100)
-
     def __str__(self) -> str:
         return self.name + ' starts at : '+self.event_start.isoformat() + ' ends at : '+self.event_end.isoformat()
-
-
 
 # User= get_user_modelV
 
@@ -29,8 +26,6 @@ class EventDates(models.Model):
 #     ('multi_correct', 'multi'),
 #     ('text_based','text'),
     
-    
-
 
 class Student(models.Model):
     user = models.OneToOneField(User, null =True,on_delete=models.CASCADE)
@@ -44,14 +39,7 @@ class Student(models.Model):
 
 # class Questions(models.Model):
     
-
-    
-#     # question = models.CharField(max_length=255)
-#     
-#     
-
-
-
+#     # question = models.CharField(max_length=255)  
 
 #     def _str_(self):
 #          return str(self.question)
@@ -68,10 +56,6 @@ class Student(models.Model):
 
 #     def _str_(self):
 #         return f"question: {self.question.question}, Answer:{self.text}, correct:{self.correct}"
-
-
-
-
 
 # class question( models.Model):
 #     QUESTION_TYPE= (
@@ -102,10 +86,6 @@ class Student(models.Model):
 
 #     class Meta:
 #         abstract =True
-
-  
-
-    
     
 # class Category(BaseModel):
 #     category_name =models.CharField(max_length=255)
@@ -136,15 +116,51 @@ class Student(models.Model):
 #         return self.answer
 
 
-        
+class Paragraph(models.Model):
+    question_text = models.TextField()
+    correct_answer = models.CharField(max_length=200)
+    sno = models.CharField(max_length=10)
+    question_id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    image = models.ImageField(upload_to="images", blank=True)
+    def __str__(self):
+        return self.question_text + " | " + "Q" + self.sno
 
+class Mcq(models.Model):
+    question_text = models.TextField()
+    option1 = models.CharField(max_length=200)
+    option2 = models.CharField(max_length=200)
+    option3 = models.CharField(max_length=200)
+    option4 = models.CharField(max_length=200)
+    correct_option = models.CharField(max_length=200)
+    sno = models.CharField(max_length=10)
+    question_id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    image = models.ImageField(upload_to="images", blank=True)
+    def __str__(self):
+        return self.question_text + " | " + "Q" + self.sno
 
+class Answer(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    response = models.TextField()
+    sno = models.CharField(max_length=10)
+    question_id = models.CharField(max_length=100)
+    is_correct = models.BooleanField(default=False)
+    def __str__(self):
+        return self.student.name + " | Q" + self.sno
 
+class Status(models.Model):
+    has_started = models.BooleanField(default=False)
+    def __str__(self):
+        return "Status : " + str(self.has_started)
 
+class Leaderboard(models.Model):
+    show = models.BooleanField(default=False)
+    def __str__(self):
+        return "Show : " + str(self.show)
 
-
-
-
-
-
-        
+class StartTime(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    start_time = models.DateTimeField(auto_now=False)
+    duration = models.CharField(default=45, max_length=10)
+    quiz_over = models.BooleanField(default=False)
+    def __str__(self):
+        return self.student.name + " | " + str(self.start_time)

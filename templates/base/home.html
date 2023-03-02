@@ -3,7 +3,34 @@
 {% load socialaccount %}
 {% block title %} Home {% endblock %}
 {% block head %}
-
+<style>
+    .hero-text__btn_n {
+        {% comment %} padding-left: 0.5rem; {% endcomment %}
+        padding: 7px 12px;
+        font-family: inherit;
+        font-size: 1.2rem;
+        display: flex;
+        font-weight: 500;
+        text-align: center;
+        color: #fff;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        /* background: #006aff; */
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        background-image: url("/static/assets/chalk_profile_button_hover.png");
+        background-color: transparent;
+        background-size: 100% 100%;
+        transition: all 0.2s;
+      }
+      .hero-text__btn_n:hover {
+        background-image: url("/static/assets/chalk_profile_button_hover.png");
+        background-color: transparent;
+        background-size: 100% 100%;
+      }
+</style>
 {% endblock %}
 
 {% block content %}
@@ -17,9 +44,10 @@
 
                 <p class="hero-text__subs">
                     <br> This competition would not only test your knowledge and promptness but would surely instill the feeling of being an entrepreneur-dodging and answering complicated questions for a living.
-                    <br>Don't miss out on this opportunity, register today!
+                    <br>Don't miss out on this opportunity, register today!
                 </p>
                     {% if request.user.is_authenticated %}
+                    {% if has_started == False %}
                     <div class="container-timer">
                         <h1 id="headline">Quiz Begins in:</h1>
 
@@ -36,8 +64,15 @@
                                 <li><span id="seconds"></span>Sec</li>
                             </ul>
                         </div>
-                    </div> 
-                    
+                    </div>
+                    {% else %}
+                    <h1 id="headline" style="margin-bottom: 10px">Quiz is now live</h1>
+                    <a class="hero-text__btn_n" href="/quiz">
+                        <p>
+                            Start
+                        </p>
+                    </a>
+                    {% endif %}
                     {% else %}
                     <a class="hero-text__btn" href="{% provider_login_url 'google' %}">
                         <p>
@@ -101,17 +136,17 @@
     <section class="service">
         <div class="blur"></div>
         <h1 class="prize-title">Prizes</h1>
-        <div class="commingSoon-center">Coming Soon!</div>
+        {% comment %} <div class="commingSoon-center">Coming Soon!</div> {% endcomment %}
 
-        <!-- <div class="container">
+        <div class="container">
             <div class="flex-cards">
                 <div class="card card-1">
                     <div class="card-image">
                         <img src="{% static 'assets/2nd.png'%}" alt="Images">
                     </div>
                     <div class="card-text">
-                        <h2 class="card-text__title">Adipisicing elit</h2>
-                        <p class="card-text__subs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quaerat?
+                        {% comment %} <h2 class="card-text__title">Adipisicing elit</h2> {% endcomment %}
+                        <p class="card-text__subs">Merchandise, coupons and goodies worth Rs. 500.
                         </p>
                     </div>
                 </div>
@@ -122,8 +157,8 @@
                         <img src="{% static 'assets/1st.png'%}" alt="Images">
                     </div>
                     <div class="card-text">
-                        <h2 class="card-text__title">Dolores distinctio</h2>
-                        <p class="card-text__subs">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, ad!</p>
+                        {% comment %} <h2 class="card-text__title">Winner</h2> {% endcomment %}
+                        <p class="card-text__subs">Merchandise, coupons and goodies worth Rs. 700.</p>
                     </div>
                 </div>
             </div>
@@ -134,13 +169,14 @@
                     <img src="{% static 'assets/3rd.png'%}" alt="Images">
                 </div>
                 <div class="card-text">
-                    <h2 class="card-text__title">incidunt tempore</h2>
-                    <p class="card-text__subs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
-                        praesentium?
+                    {% comment %} <h2 class="card-text__title">2nd Runner Up</h2> {% endcomment %}
+                    <p class="card-text__subs">
+                        Merchandise, coupons and goodies worth Rs. 300
                     </p>
                 </div>
             </div>
-        </div> -->
+        </div>
+        <p style="color:white;text-align:center;margin-top:10px">All participants of the event will be given away certificates</p>
 
 
     </section>
