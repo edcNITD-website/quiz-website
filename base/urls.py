@@ -1,17 +1,12 @@
 from django.urls import path
-
 from . import views
 
-
-
-
-
-urlpatterns=[
-    path('',views.home),
+urlpatterns = [
+    path('', views.home),
     path('register', views.register),
-    path('quiz',views.quiz),
-    path('export',views.export)
-    
-    
-
+    path('export', views.export),
+    path('quiz', views.quiz_home),
+    path('quiz/<sno>', views.quiz),
+    path('standings', views.standings),
+    path('quiz-over', views.quizOver),
 ]

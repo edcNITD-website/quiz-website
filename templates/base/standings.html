@@ -1,0 +1,63 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% block title %} Standings{%  endblock  %}
+{% block head %}
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+    crossorigin="anonymous"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Walter+Turncoat");
+  * {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: "Walter Turncoat", cursive;
+  }
+  body {
+    background-image: url("https://assets.codepen.io/3351103/black-board.jpg");
+    color: white;
+  }
+  .box {
+    /* background-color: rgba(255, 255, 255, 0.6); */
+    {% comment %} width: 80%; {% endcomment %}
+    {% comment %} height: 60vh; {% endcomment %}
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .standing-list {
+    color: white;
+    background: linear-gradient( 135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px rgb(0 0 0 / 37%);
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="box">
+    <h1>QUIZ-A-PRENEUR - Standings</h1>
+    <ul class="list-group container w-50">
+        {% for i in standings %}
+        <li class="list-group-item standing-list d-flex justify-content-between align-items-center">
+            {{ forloop.counter }}.  {{ i.student.name }}
+            <span class="badge bg-primary rounded-pill" style="width:12%">{{ i.score }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
