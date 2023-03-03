@@ -115,7 +115,7 @@ def quiz(request, sno):
         question_id = request.POST['question_id']
         paragraph_q = Paragraph.objects.filter(sno=sno).first()
         mcq_q = Mcq.objects.filter(sno=sno).first()
-        already_answered = Answer.objects.filter(question_id=question_id).first()
+        already_answered = Answer.objects.filter(question_id=question_id,student=student).first()
         if already_answered is not None:
             already_answered.response = response
             if paragraph_q is not None:
