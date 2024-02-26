@@ -151,11 +151,20 @@ def export(request):
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename= quizregistration.csv'
         writer = csv.writer(response)
-        writer.writerow(['User','Standard','School','Phone Number','City of Residence'])
-        field =['User','Standard','School','Phone Number','City of Residence']
-        student_fields= students.values_list('user','standard','school','phone_number','city_of_residence')
-        for student in student_fields:
-            writer.writerow(student)
+        writer.writerow(['Name','Email','Standard','School','Phone Number','City of Residence'])
+        # field =['User','Standard','School','Phone Number','City of Residence']
+        # student_fields= students.values_list('name','email','standard','school','phone_number','city_of_residence')
+        for student in students:
+            writer.writerow(
+                    [
+                        student.user.first_name + " " + student.user.last_name,
+                        student.user.email,
+                        student.standard,
+                        student.school,
+                        student.phone_number,
+                        student.city_of_residence
+                    ]
+                )
         return response
 
 @login_required
