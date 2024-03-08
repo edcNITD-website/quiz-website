@@ -23,12 +23,14 @@ function startTimer() {
 }
 
 function countdown() {
-  let seconds = document.getElementById("time_diff").innerHTML;
-  document.getElementById("time_diff").innerHTML = seconds - 1;
-  // let seconds = 100;
-  // console.log(document.getElementById('time_diff').innerHTML);
-  // console.log(seconds);
-  secondsToDhms(seconds);
+  if (document.getElementById("time_diff")) {
+    let seconds = document.getElementById("time_diff").innerHTML;
+    document.getElementById("time_diff").innerHTML = seconds - 1;
+    // let seconds = 100;
+    // console.log(document.getElementById('time_diff').innerHTML);
+    // console.log(seconds);
+    secondsToDhms(seconds);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", startTimer());
@@ -39,10 +41,10 @@ var days, hours, minutes, seconds; // variables for time units
 
 var countdown = document.getElementById("tiles"); // get tag element
 
-getCountdown();
+if (document.getElementById("tiles") != null) getCountdown();
 
 setInterval(function () {
-  getCountdown();
+  if (document.getElementById("tiles") != null) getCountdown();
 }, 1000);
 
 function getCountdown() {

@@ -31,6 +31,9 @@ a {
   /* display: flex; */
   /* flex-direction: row; */
 }
+.footer-contact h3 {
+  overflow: hidden;
+}
 .footer-copy {
   text-align: center;
   margin-left: 3rem;
