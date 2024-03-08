@@ -182,8 +182,8 @@ def standings(request):
                 'student': student,
                 'score': score
             })
-        context.sort(key=lambda x: score, reverse=True)
-        return render(request, 'base/standings.html', { 'standings': context })
+        sorted_context = sorted(context, key=lambda x: x['score'], reverse=True)
+        return render(request, 'base/standings.html', { 'standings': sorted_context })
     else:
         return redirect('/')
 
