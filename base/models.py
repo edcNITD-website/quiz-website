@@ -160,7 +160,7 @@ class Leaderboard(models.Model):
 class StartTime(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     start_time = models.DateTimeField(auto_now=False)
-    duration = models.CharField(default=45, max_length=10)
+    duration = models.CharField(default=30, max_length=10)
     quiz_over = models.BooleanField(default=False)
     def __str__(self):
         return self.student.name + " | " + str(self.start_time)
