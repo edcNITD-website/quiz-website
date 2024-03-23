@@ -21,6 +21,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
     padding: 0;
     font-family: "Walter Turncoat", cursive;
   }
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.08);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.14);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
+  }
   body {
     background-image: url("https://assets.codepen.io/3351103/black-board.jpg");
     color: white;
@@ -48,15 +61,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
   .box h1 {
     overflow: hidden;
   }
+  .standings-ul {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+  .standings-li {
+    padding: 12px 15px;
+    overflow: hidden;
+  }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="box">
     <h1>QUIZ-A-PRENEUR - Standings</h1>
-    <ul class="list-group container" style="width: max(50%, 265px);">
+    <ul class="list-group container standings-ul" style="width: max(50%, 307px);">
         {% for i in standings %}
-        <li class="list-group-item standing-list d-flex justify-content-between align-items-center">
+        <li class="list-group-item standing-list d-flex justify-content-between align-items-center standings-li">
             {{ forloop.counter }}.  {{ i.student.name }}
             <span class="badge bg-primary rounded-pill" style="width:12%">{{ i.score }}</span>
         </li>
